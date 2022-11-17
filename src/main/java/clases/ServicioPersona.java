@@ -5,6 +5,7 @@
 package clases;
 
 import static clases.ServicioSerie.teclado;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -17,30 +18,96 @@ public class ServicioPersona {
     public static Scanner teclado = new Scanner(System.in);
 
     public static Persona leerTecladoPersona() {
-        //creamos el objeto de tipo persona
+        //Creamos el objeto de tipo persona
         Persona persona;
         System.out.println("Como se llama la persona");
         String nombrePersona = teclado.nextLine();
+        //Edad enlazado con el metodo
         System.out.println("Que edad tiene la personas");
-        int edadPersona = teclado.nextInt();
-        teclado.nextLine();
+        int edadPersona = pedirEdadPersona();
+
         System.out.println("Que tipo de sexo es la persona");
         char sexoPersona = teclado.next().charAt(0);
-        System.out.println("DNI de la persona generado");
-        String dniPersona = Persona.generarNIF();
-
-        System.out.println("Cuanto pesa la persona");
-        double pesoPersona = teclado.nextInt();
+        
+        
+        //String dniPersona = Persona.generarNIF();
+        //Peso de la persona
       
+        double pesoPersona = pedirPersonaPeso();
 
-        teclado.nextLine();
-        System.out.println("Cuanto mide la persona");
-        double alturaPersona = teclado.nextInt();
+        //Añtura de la persona
+       
+        double alturaPersona = pedirAlturaPersona();
+        
+        //IMC
 
-        //instacias del objeto persona
-        persona = new Persona(nombrePersona, edadPersona, dniPersona, sexoPersona, pesoPersona, alturaPersona);
-
+        
+        
+     
+        //instacias del objeto persona,En el contructor quitar el nif porque ya se crea en el mismo metodp
+        persona = new Persona(nombrePersona, edadPersona, sexoPersona, pesoPersona, alturaPersona);
+        
         return persona;
+    }
+
+    public static int pedirEdadPersona() {
+
+        int edad;
+
+        do {
+            try {
+
+                System.out.println("Introduzca la edad de la persona");
+
+                edad = teclado.nextInt();
+
+                break;
+            } catch (InputMismatchException ime) {
+                System.out.println("Dato Invalido,vuelva a introducirlo");
+                teclado.nextLine();
+            }
+        } while (true);
+        return edad;
+    }
+
+    public static double pedirAlturaPersona() {
+
+        double altura;
+
+        do {
+            try {
+
+                System.out.println("Introduzca la Altura de la persona");
+
+                altura = teclado.nextDouble();
+
+                break;
+            } catch (InputMismatchException ime) {
+                System.out.println("Dato Invalido,vuelva a introducirlo");
+                teclado.nextLine();
+            }
+        } while (true);
+        return altura;
+    }
+
+    public static double pedirPersonaPeso() {
+
+        double peso;
+
+        do {
+            try {
+
+                System.out.println("Introduzca el peso de la persona");
+
+                peso = teclado.nextDouble();
+
+                break;
+            } catch (InputMismatchException ime) {
+                System.out.println("Dato Invalido,vuelva a introducirlo");
+                teclado.nextLine();
+            }
+        } while (true);
+        return peso;
     }
 
 }
