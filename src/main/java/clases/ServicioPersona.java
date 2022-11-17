@@ -25,21 +25,23 @@ public class ServicioPersona {
         //Edad enlazado con el metodo
         System.out.println("Que edad tiene la personas");
         int edadPersona = pedirEdadPersona();
-
+        
         System.out.println("Que tipo de sexo es la persona");
         char sexoPersona = teclado.next().charAt(0);
         
         
-        //String dniPersona = Persona.generarNIF();
-        //Peso de la persona
-      
+        //El string al ser privado, solo se usara en Persona, por lo cual lo metemos ene l contructor, 
+        // pero no en los parametros, aparecera al final
+        //Peso de la persona mediante un metodo
+        
         double pesoPersona = pedirPersonaPeso();
 
-        //Añtura de la persona
+        //Altura de la persona en un metodo
        
         double alturaPersona = pedirAlturaPersona();
         
-        //IMC
+        //Despues viene el IMC que solo esta en Persona, se pondra solo en el Main,
+        //ya que es alli donde tiene que aparecer
 
         
         

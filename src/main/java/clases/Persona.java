@@ -90,13 +90,14 @@ public class Persona {
    
 
     public boolean filtrarSexo(char sexo) {
-        //Filtrado del sexo de un char a un boolean
+        //Filtrado del sexo de un char a , se usa el ==
 
         return (sexo == 'H' || sexo == 'M' || sexo == 'O');
     }
 
     private char asignarSexo(char sexo) {
-
+        //se usa esta asignacion en el constrcutor con un ternario que en caso de otra cosa que no sea 
+        // M H O se ponga O automaticamente
         char sex = filtrarSexo(sexo) ? sexo : 'O';
         return sex;
     }
@@ -127,7 +128,7 @@ public class Persona {
     //Uso de ternario para decir si es mayor de edad o menor
 
     public  boolean esMayorEad() {
-
+        //returnamos la edad del objeto "this"
         return this.edad >= 18;
     }
     
