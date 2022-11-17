@@ -13,7 +13,7 @@ public class Tarea4cPablo {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        String nif="";
+        
         
         
         
@@ -21,6 +21,9 @@ public class Tarea4cPablo {
         
         System.out.println(JuanPamolo.toString());
         
-        Persona.generarNIF(nif);
+       Persona v1 = ServicioPersona.leerTecladoPersona();
+       
+       
+        System.out.println(v1);
     }
 }
