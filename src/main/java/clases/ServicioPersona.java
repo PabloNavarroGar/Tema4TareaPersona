@@ -46,7 +46,7 @@ public class ServicioPersona {
         
         
      
-        //instacias del objeto persona,En el contructor quitar el nif porque ya se crea en el mismo metodp
+        //instacias del objeto persona,En el contructor quitar el nif porque ya se crea en el mismo metodo
         persona = new Persona(nombrePersona, edadPersona, sexoPersona, pesoPersona, alturaPersona);
         
         return persona;
